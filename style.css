@@ -1,0 +1,217 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background: linear-gradient(to right, #b2c1d5, #d7dee7);
+    /* background-color: rgb(197, 201, 221); */
+    /* background-color: rgb(147, 143, 145); */
+    /* font-family: 'Times New Roman', Times, serif; */
+    background-repeat: none;
+    background-position: fixed;
+    background-size: cover;
+    
+
+   
+}
+.main{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    
+}
+.login{
+    
+     height: max-content;
+    min-width: 350px; 
+    box-shadow: 2px 2px 4px rgb(58, 58, 52);
+    padding: 2%;
+    margin-top: 70px;
+    font-family: Arial, sans-serif;
+    background-color: rgb(237, 237, 241);
+    border-radius: 5px;
+    margin-bottom: 200px;
+}
+ 
+.fail{
+    height: 10px; 
+    min-width: 350px; 
+    padding: 2%;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    color: red;
+    position: absolute;
+    top: 20px;
+}
+.pass{
+    height: 10px; 
+    min-width: 350px; 
+    padding: 2%;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    font-size: 19px;
+    color: rgb(45, 137, 17);
+    position: absolute;
+    top: 20px;
+}
+ 
+.user{
+
+    width: 95%;
+    line-height: 27px;
+    padding: 2px 6px;
+    font-size: 1rem;
+    outline:none;
+    border:0.5px solid rgb(175, 177, 221);
+   
+    letter-spacing:2px ;
+    margin-left: 2%;
+    margin-bottom: 15px;
+    margin-top: 3px;
+    border-radius: 3px;
+}
+
+.user:focus{
+   outline:1px solid rgb(55, 104, 252);
+
+}
+.head{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.label{
+   position: relative;
+    top: 0px;
+    left: 3%;
+    font-size: 0.85rem;
+    
+}
+.name{
+    margin-bottom: 10px;
+}
+.password{
+    margin-bottom: 20px;
+}
+.btn{
+    margin-top: 10px;
+   margin-bottom: 20px; 
+   position: relative;
+   left: 65%;
+   width: 29%;
+   height: 30px;
+   background-color: rgb(120, 148, 233);
+   border: none;
+   box-shadow: 1px 1px 4px rgb(49, 44, 44);
+   border-radius: 3px;
+   /* outline:30px solid green ; */
+}
+.btn:hover{
+    background-color: #5178ef;  
+}
+ 
+.para,green{
+    margin-bottom: 10px;
+    font-size: 1rem;
+    
+}
+.contact{
+ text-decoration: none;
+ 
+}
+
+@media (max-width:400px) {
+    .login{
+       min-width:90vw;
+       font-size: 27px;
+       margin-top: 80px;
+       
+    }
+    .fail{
+        /* min-width:90vw; */
+       font-size: 17px;
+       margin-top: 30px;
+    }
+    .pass{
+        /* min-width:90vw; */
+       font-size: 17px;
+       margin-top: 30px;
+    }
+    .label{
+      font-size: 15px;
+      /* left: 3%;   */
+        
+    }
+    .user{
+        line-height:27px;
+        
+    }
+    .btn{
+        height: 45px;
+        width: 40%;
+        left: 55%;
+        font-size: 17px;
+    }
+ }
+ /* -------------------------------- */
+
+ .nav{
+    margin-top: 2px;
+    height: 60px;
+    background-color: #6f8de7;
+    position: sticky;
+    top: 1px;
+    width: 100vw; 
+ }
+.bar{
+    width: fit-content;
+    position: relative;
+    left:57%;
+    top: 15px;
+}
+.menu{
+    padding: 3px;
+    text-decoration: none;
+    margin-right: 70px;
+    color: black;
+    font-size: 1.15rem;
+
+ }
+.menu:hover{
+    
+    box-shadow: 1px 1px 3px #000000;
+    border-radius: 4px;
+ }
+ .option{
+    text-decoration: none;
+    display: none;
+ }
+@media (max-width:400px){
+    .options{
+        display: none;
+       
+        
+
+    }
+    .option{
+        display: block;
+        position: relative;
+        left: 80%;
+        width: 100px;
+          height: fit-content;
+          padding-bottom: 100px;
+          text-align: end;
+          border-radius: 2px;
+    }
+
+  .option:hover~.options
+  {
+     display: block;
+     position: relative;
+     left: 50%; 
+    width: 100px;
+    top: -90px;
+    box-shadow:1px 1px 5px black;
+    color: rgb(4, 4, 3);
+    }
+}
