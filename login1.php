@@ -1,8 +1,8 @@
 <?php
 
     session_start();
-    $con=new mysqli('localhost','root','','db');
-    //$con=new mysqli('sql12.freesqldatabase.com','sql12776528','vYGngFVM6r','sql12776528');
+$database='sql12782686';
+$con=new mysqli('sql12.freesqldatabase.com',$database,'unknown@1',$database);    //$con=new mysqli('sql12.freesqldatabase.com','sql12776528','vYGngFVM6r','sql12776528');
         if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);} 
         $_SESSION['a']='';
