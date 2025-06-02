@@ -2,8 +2,8 @@
     session_start();
     // include('connection.php');
 
-    //$con=new mysqli('sql12.freesqldatabase.com','sql12776528','vYGngFVM6r','sql12776528');
-     $con=new mysqli('localhost','root','','db');
+$database='sql12782686';
+$con=new mysqli('sql12.freesqldatabase.com',$database,'unknown@1',$database);    // $con=new mysqli('localhost','root','','db');
     $a='';
     $b='';
     $c='';
