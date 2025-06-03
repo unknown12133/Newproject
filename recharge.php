@@ -1,9 +1,11 @@
 <?php
     session_start();
-    // include('connection.php');
+   
+$db='sql12782686';
+$con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
 
-$database='sql12782686';
-$con=new mysqli('sql12.freesqldatabase.com',$database,'unknown@1',$database);    // $con=new mysqli('localhost','root','','db');
+//$con=new mysqli('localhost','root','','db');
+
     $a='';
     $b='';
     $c='';
@@ -20,7 +22,7 @@ $con=new mysqli('sql12.freesqldatabase.com',$database,'unknown@1',$database);   
     $noofrows=mysqli_num_rows($result);
     // echo $noofrows;
     if($noofrows==1){
-        header("Location:upi://pay?pa=saibattu9618@axl&pn=sai%20kumar&mc=0000&mode=02&purpose=00&am='$b'");
+        header("Location:upi://pay?pa=saibattu9618@axl&pn=sai%20kumar&mc=0000&mode=02&purpose=00&am='$c'");
         //   echo 'affffffff';
     }
     else{

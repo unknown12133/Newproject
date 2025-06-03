@@ -30,7 +30,7 @@ h2{
    margin-left: 15px;
 }
 .d{
-    margin-left: 250px;
+    margin-left: 276px;
     padding: 7px 20px;
     border: none;
     box-shadow: 2px 2px 3px black;
@@ -47,7 +47,7 @@ h2{
     .d{
         /* color: brown; */
        margin: 0px;
-       margin-left: 60vw;
+       margin-left: 73%;
      }
 }
 .tt,.t{

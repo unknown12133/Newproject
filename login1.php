@@ -1,21 +1,27 @@
 <?php
 
     session_start();
-$database='sql12782686';
-$con=new mysqli('sql12.freesqldatabase.com',$database,'unknown@1',$database);    //$con=new mysqli('sql12.freesqldatabase.com','sql12776528','vYGngFVM6r','sql12776528');
+    // $con=new mysqli('localhost','root','','db');
+
+   $db='sql12782686';
+$con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
+
         if ($con->connect_error) {
-        die("Connection failed: " . $con->connect_error);} 
+        die("Connection failed: " . $con->connect_error);}
         $_SESSION['a']='';
-    if(isset($_GET['submit'])){
-       $a=$_GET['a'];
+         $_SESSION['fail']='';
+        //else{
+    if(isset($_GET['a'])){
+       $a=$_GET['a'];}
     //    $b=$_GET['b'];
-       $c=$_GET['c'];
+    if(isset($_GET['c'])){
+       $c=$_GET['c'];}
     //    if($b==''){
     //     header("location:login.php");
     //     session_destroy();
 
-    //    }
-
+       // }
+        if($a!='' and $c!=''){
        $sumb = "SELECT * FROM aaa WHERE UID='$a'";
        $result = $con-> query($sumb);
        $noofrows=mysqli_num_rows($result);
@@ -28,6 +34,7 @@ $con=new mysqli('sql12.freesqldatabase.com',$database,'unknown@1',$database);   
          $ae=htmlspecialchars($record['AMOUNT']);
          $af=htmlspecialchars($record['PASSWORD']);
         }
+        
 
        if($noofrows==1){
            $ff='qwer';
@@ -35,7 +42,7 @@ $con=new mysqli('sql12.freesqldatabase.com',$database,'unknown@1',$database);   
                 else{ 
                      header("location:login.php");
                     $_SESSION['a']='wrong password';
-                    
+                    $_SESSION['fail']='fail';
 
                     //session_destroy();
                     }
@@ -47,11 +54,15 @@ $con=new mysqli('sql12.freesqldatabase.com',$database,'unknown@1',$database);   
             //session_destroy();
             }
       
-
+        }
+        else{
+            header("location:login.php");
+            session_destroy();
+        }
     $sql="SELECT QUANTITY,AMOUNT,DATE,TIME FROM aa WHERE UID='$a'";
     $resul = $con-> query($sql);
 
-}$ss=0;
+$ss=0;
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,7 +1,11 @@
 <?php
-$database='sql12782686';
-$con=new mysqli('sql12.freesqldatabase.com',$database,'unknown@1',$database); header('Content-Type: application/json');
- //$con=new mysqli('localhost','root','','db');
+
+$db='sql12782686';
+$con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
+
+//$con=new mysqli('localhost','root','','db');
+
+ header('Content-Type: application/json');
 
 
 if ($con->connect_error) {

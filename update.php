@@ -1,9 +1,12 @@
 <?php
     session_start();
-    // $con=new mysqli('localhost','root','','db');
-$database='sql12782686';
-$con=new mysqli('sql12.freesqldatabase.com',$database,'unknown@1',$database);
-$a='';
+    
+//$con=new mysqli('localhost','root','','db');
+
+    $db='sql12782686';
+$con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
+    
+   $a='';
    $b='';
    $c='';
    $d='';

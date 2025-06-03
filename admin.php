@@ -1,23 +1,26 @@
 <?php
- //include('connection.php')
-$database='sql12782686';
-$con=new mysqli('sql12.freesqldatabase.com',$database,'unknown@1',$database);
- //header('Content-Type: application/json');
+
+$db='sql12782686';
+$con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
+
 // $con=new mysqli('localhost','root','','db');
+
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);}
 else{
      $a='';
      $b='';
      $fail='';
+     $ss=0;
      if(isset($_GET['a'])){
          $a=$_GET['a'];}
     if(isset($_GET['b'])){
      $b=$_GET['b'];
     $fail='invalid credentials';
-    $failno='fail';
-    
+    $failno='fail'; 
     }
+    if(isset($_GET['submit'])){
+         $c=$_GET['submit'];}
     $sql="SELECT * FROM aaa";
     $resul = $con-> query($sql);
 }
@@ -50,8 +53,10 @@ else{
     
     <div id="b">
         <h2 class="jj">user data:</h2><br>
+        <div>click here to <a href="registration.php">register</a></div><br>
         <div class="gg">
         <div class="dd" >
+
             <table class="g" style="background-color:white;">
             <tr>
                     <th class="tt">S.NO</th>
@@ -63,17 +68,17 @@ else{
                     <th class="tt">DATE</th>
                     <th class="tt">OPERATION</th>
                 </tr>
-               <?php foreach ($resul as $recor){?>
+               <?php foreach ($resul as $recor){++$ss;?>
                 <tr>
-                     <td class="t"> <?php echo htmlspecialchars($recor['SNO']); ?> </td>
+                     <td class="t"> <?php echo $ss; ?> </td>
                      <td class="t"> <?php echo htmlspecialchars($recor['UID']); ?> </td>
                     <td class="t"> <?php echo htmlspecialchars($recor['NAME']); ?></td>
                     <td class="t"> <?php echo htmlspecialchars($recor['FATHER_NAME']); ?></td>
                     <td class="t"> <?php echo htmlspecialchars($recor['MOBILE_NO']); ?></td>
                     <td class="t"> <?php echo htmlspecialchars($recor['AMOUNT']); ?></td>
                     <td class="t"> <?php echo htmlspecialchars($recor['DATE']); ?></td>
-                    <td class="t"><button class="n"><a href="update.php?a=<?php echo htmlspecialchars($recor['SNO']); ?>">UPDATE</a></button> <button class="nn"><a href="delete.php?a=<?php echo htmlspecialchars($recor['SNO']); ?>"> DELETE</a></button></td>
-                   
+<td class="t"><button class="n"><a href="<?php if($c==1){ echo'regi.php?a='; echo htmlspecialchars($recor['SNO']);} ?>">UPDATE</a></button>
+                     <button class="nn"><a href="<?php if($c==11){ echo'delete.php?a='; echo htmlspecialchars($recor['SNO']);} ?>"> DELETE</a></button></td>                   
                 </tr>
                <?php } ?>
             </table>
