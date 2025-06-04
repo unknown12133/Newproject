@@ -33,6 +33,7 @@ else{
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" href="stylefor table.css">
 </head>
 <body style="background: linear-gradient(to right, #b2c1d5, #d7dee7);">
   <?php
