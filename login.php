@@ -2,17 +2,27 @@
     session_start();
    $fail='';
    $failno='';
+   $cross='none';
+   $_SESSION['LOGIN'] = true;
     // if($_SESSION['a']!=''){
     //     $a=$_SESSION['a'];
     // }
      if(isset($_SESSION['a'])){
         $fail=$_SESSION['a'];
-     }  
+     $cross='cross';
+    }  
     if(isset($_SESSION['fail'])){
         $failno=$_SESSION['fail'];
-     }   
+    } 
+    if($failno==''){
+        $failno='none';
+    }  
+    // echo $failno;
 
-         
+    
+
+    
+     
 ?>
 <html>
     <head>
@@ -34,7 +44,7 @@
             </div>
         </div> -->
         <form class="main" method="GET" action="login1.php">
-   <span class="<?php echo $failno ?>"><?php echo $fail;?></span>
+   <span class="<?php echo $failno ?>"><?php echo $fail;?><a class="<?php echo $cross; ?>" onclick="dis()">&#x274c;</a></span>
         <div class="login">
             <h3 class="head">Welcome Back</h3>
             <label for="" class="label ">user id</label><br>
@@ -48,10 +58,21 @@
         <script> 
            setTimeout(function() {
                document.querySelector('.fail').remove();
-               }, 2300)//
+               document.querySelector(".cross").remove();
+               }, 3500)//
                if(window.history.replaceState){
              window.history.replaceState(null,null,window.location.href);
+
+             function dis(){
+            document.querySelector(".cross").style.display="none";
+            document.querySelector(".fail").style.display="none";
+           
+         }
          }
     </script>
     </body>
 </html>
+
+<?php 
+  
+?>

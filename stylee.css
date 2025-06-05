@@ -57,6 +57,7 @@ body{
     border-radius: 10px;
     padding-top: 20px;
     transition-duration: 0.4s;
+    animation:slideright 1s ease;
 
     /* top: 100px; */
 }
@@ -75,7 +76,7 @@ body{
 
 .new{
   width:550px;
-   
+   animation:slidedown 1.5s ease;
     height:fit-content;
     /* background-color: rgb(49, 181, 150); */
 }
@@ -84,4 +85,38 @@ body{
     position: relative;
     top: 100px;
     left: 10vw;
-    /* right: 5vw; */}
+    animation:slideright 2s ease;
+    /* right: 5vw; */
+}
+@keyframes slideright{
+    0%{
+        transform: translateX(-60px);
+        opacity: 0;
+    }
+    80%{
+        transform: translateX(10px);
+
+    }
+    100%{
+        transform: translateX(0px);
+
+    }
+
+}
+@keyframes slidedown{
+    0%{
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    80%{
+        transform: translateY(10px);
+
+    }
+    100%{
+        transform: translateY(0px);
+
+    }
+
+
+}
+    

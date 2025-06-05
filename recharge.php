@@ -1,8 +1,8 @@
 <?php
     session_start();
    
-$db='sql12782686';
-$con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
+ $db='sql12782686';
+ $con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
 
 //$con=new mysqli('localhost','root','','db');
 
@@ -11,7 +11,7 @@ $con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
     $c='';
     $fail=''; 
     $failno='';
-
+    $cross='none';
     if(isset($_POST['submit'])){
         $a=$_POST['a'];
         $b=$_POST['b'];
@@ -26,22 +26,24 @@ $con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
         //   echo 'affffffff';
     }
     else{
-        $fail='User id not exist';
+        $fail='User id not exist ';
         $failno='fail';
+        $cross='cross';
         
         //  echo 'fail';
     }}
 ?>
 <html>
     <head>
-        <title>dairylet recharge</title>
+        <title>recharge</title>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <form class="main" method="POST">
-            <span class="<?php echo $failno ?>"><?php echo $fail;?></span>
+            <span class="<?php echo $failno ?>"><?php echo $fail;?><a class="<?php $cross; ?>" onclick="dis()">&#x274c;</a></span>
+            
         <div class="login">
             
             
@@ -63,6 +65,12 @@ $con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
                }, 2300)//
                if(window.history.replaceState){
              window.history.replaceState(null,null,window.location.href);
+
+             function dis(){
+            document.querySelector(".cross").style.display="none";
+            document.querySelector(".fail").style.display="none";
+           
+         }
          }
     </script>
     <script>

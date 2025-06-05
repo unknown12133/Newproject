@@ -1,12 +1,39 @@
 <?php
 
     session_start();
-    // $con=new mysqli('localhost','root','','db');
+     //$con=new mysqli('localhost','root','','db');
 
-   $db='sql12782686';
-$con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
+     $db='sql12782686';
+     $con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
+ 
 
-        if ($con->connect_error) {
+
+// Set timeout duration (e.g., 300 seconds = 5 minutes)
+$inactive = 60;
+
+// Check if last activity time is set
+if (isset($_SESSION['timeout'])) {
+    $session_life = time() - $_SESSION['timeout'];
+    if ($session_life > $inactive) {
+        session_unset();     // remove session variables
+        session_destroy();   // destroy session
+        header("Location:difesdiejfiegflmfgf.rogfjdifsmeo43594tj4t5ibt5"); // redirect to logout or home
+        exit();
+    }
+}
+
+// Update last activity time
+$_SESSION['timeout'] = time();
+
+       
+
+
+        if($_SESSION['LOGIN'] != true){
+            header("location:eoierkzelsh4854rt8fe4fjes9jp4t");
+            session_unset();
+        }
+    
+    if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);}
         $_SESSION['a']='';
          $_SESSION['fail']='';
@@ -37,14 +64,14 @@ $con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
         
 
        if($noofrows==1){
+     $_SESSION['a']=' password';
+
            $ff='qwer';
                 if($af==$c or $ff==$c){ }
                 else{ 
-                     header("location:login.php");
+                    header("location:login.php");
                     $_SESSION['a']='wrong password';
                     $_SESSION['fail']='fail';
-
-                    //session_destroy();
                     }
         }
          else{ 
