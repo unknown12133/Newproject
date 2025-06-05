@@ -42,6 +42,7 @@ else{
     $fail='invalid credentials';
     $failno='fail'; 
     }
+
     if(isset($_GET['submit'])){
          $c=$_GET['submit'];}
          
@@ -90,7 +91,7 @@ else{
             <input style="" type="text" class="user name" name="a" id="" requied><br>
             <label for="" class="label b">password</label><br>
             <input type="password" class="user password" name="b" id="" required><br>
-           <button class="btn">subimt</button>
+           <button class="btn" name="submit">subimt</button>
             <p class="para">If any problem during login <a href="" class="contact us">contact us.</a></p>
         </div></form>
     <?php }
