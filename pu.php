@@ -1,9 +1,9 @@
 <?php
 
  $db='sql12782686';
- //$con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
+ $con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
 
-$con=new mysqli('localhost','root','','db');
+//$con=new mysqli('localhost','root','','db');
 
  header('Content-Type: application/json');
 
