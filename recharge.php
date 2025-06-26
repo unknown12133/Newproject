@@ -42,7 +42,7 @@
     </head>
     <body>
         <form class="main" method="POST">
-            <span class="<?php echo $failno ?>"><?php echo $fail;?><a class="<?php $cross; ?>" onclick="dis()">&#x274c;</a></span>
+            <span class="<?php echo $failno ?>"><?php echo $fail;?><a class="<?php echo $cross; ?>" onclick="dis()">&#x274c;</a></span>
             
         <div class="login">
             
