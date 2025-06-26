@@ -1,6 +1,6 @@
 <?php
  
- $db='sql12782686';
+ $db='sql12786990';
  $con=new mysqli('sql12.freesqldatabase.com',$db,'unknown@1',$db);
 
  // $con=new mysqli('localhost','root','','db');
